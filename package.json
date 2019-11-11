@@ -1,0 +1,19 @@
+{
+  "name": "silly-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "tdd": "jest --watch",
+    "start": "ws"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "jsdom": "^15.2.1",
+    "local-web-server": "^3.0.7"
+  }
+}
