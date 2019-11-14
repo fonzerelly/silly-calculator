@@ -8,12 +8,24 @@ window.onload = () => {
             display.innerHTML += btn.innerHTML
         })
     })
-    const defaultOperatorFn = () => {
-        display.innerHTML = '0'
+
+    let term =''
+    const createDefaultOperatorFn = (operator) => {
+        return () => {
+            term += display.innerHTML + operator
+            display.innerHTML = '0'
+        }
     }
     const plus = document.querySelector('#plus')
-    plus.addEventListener('click', defaultOperatorFn)
+    plus.addEventListener('click', createDefaultOperatorFn('+'))
 
     const minus = document.querySelector('#minus')
-    minus.addEventListener('click', defaultOperatorFn)
+    minus.addEventListener('click', createDefaultOperatorFn('-'))
+
+    const equals = document.querySelector('#equals')
+    equals.addEventListener('click', () => {
+        term += display.innerHTML
+        display.innerHTML = eval(term)
+        term = ''
+    })
 }
