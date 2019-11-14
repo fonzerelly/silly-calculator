@@ -8,8 +8,12 @@ window.onload = () => {
             display.innerHTML += btn.innerHTML
         })
     })
-    const plus = document.querySelector('#plus')
-    plus.addEventListener('click', () => {
+    const defaultOperatorFn = () => {
         display.innerHTML = '0'
-    })
+    }
+    const plus = document.querySelector('#plus')
+    plus.addEventListener('click', defaultOperatorFn)
+
+    const minus = document.querySelector('#minus')
+    minus.addEventListener('click', defaultOperatorFn)
 }

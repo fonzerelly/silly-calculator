@@ -50,4 +50,15 @@ describe('calculator', () => {
         plus.click()
         expect(display.innerHTML).toEqual('0')
     })
+
+    itWill('set display to zero on minus', () => {
+        const document = dom.window.document
+        const display = document.getElementById('display')
+        const button = document.querySelector('button')
+        const minus = document.querySelector('#minus')
+
+        button.click()
+        minus.click()
+        expect(display.innerHTML).toEqual('0')
+    })
 })
