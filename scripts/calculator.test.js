@@ -15,7 +15,7 @@ describe('calculator', () => {
             buttons.forEach((btn) => {
                 btn.click()
             })
-            
+
             expect(display.innerHTML).toMatch(new RegExp(numChar))
         })
     })
@@ -75,5 +75,25 @@ describe('calculator', () => {
         equals.click()
         expect(display.innerHTML).toEqual('14')
 
+    })
+
+    itWill('clear display when number gets clicked after equals', (done) => {
+        const document = dom.window.document
+        const display = document.getElementById('display')
+        const button = document.querySelector('button')
+        const plus = document.querySelector('#plus')
+        const minus = document.querySelector('#minus')
+        const equals = document.querySelector('#equals')
+
+        button.click() // 7
+        plus.click()   // 0
+        button.click() // 7
+        equals.click()
+        button.click()
+        button.click() // 77
+        minus.click()
+        button.click() // 7
+        equals.click()
+        expect(display.innerHTML).toEqual('70')
     })
 })

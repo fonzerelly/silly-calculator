@@ -1,11 +1,13 @@
 window.onload = () => {
+    let operatorClicked = false
     const display = document.getElementById('display')
     document.querySelectorAll('.number').forEach((btn) => {
         btn.addEventListener('click', () => {
-            if (display.innerHTML === '0') {
+            if (display.innerHTML === '0' || operatorClicked) {
                 display.innerHTML = ''
             }
             display.innerHTML += btn.innerHTML
+            operatorClicked = false
         })
     })
 
@@ -27,5 +29,6 @@ window.onload = () => {
         term += display.innerHTML
         display.innerHTML = eval(term)
         term = ''
+        operatorClicked = true
     })
 }
