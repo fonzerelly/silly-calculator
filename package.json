@@ -15,5 +15,8 @@
     "jest": "^24.9.0",
     "jsdom": "^15.2.1",
     "local-web-server": "^3.0.7"
+  },
+  "jest": {
+    "setupFiles": ["./testHelpers/itWill.js", "./testHelpers/initDom.js"]
   }
 }
